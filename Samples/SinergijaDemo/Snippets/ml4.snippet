@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ml4</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ml4</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp" Delimiter="$"><![CDATA[                var reader = TextLoader.CreateReader(
+                    environment,
+                    ctx => ( 
+                        Id: ctx.LoadText(0), 
+                        Area: ctx.LoadText(1),
+                        Title: ctx.LoadText(2),
+                        Description: ctx.LoadText(3)),
+                    separator: '\t',
+                    hasHeader: true);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ml8</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ml8</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp" Delimiter="$"><![CDATA[                var scores = model.Transform(testData);
+                var metrics = classification.Evaluate(scores, row => row.Label, row => row.Score);
+                Console.WriteLine("Micro-accuracy is: " + metrics.AccuracyMicro);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

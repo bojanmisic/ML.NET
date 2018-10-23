@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ml6</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ml6</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp" Delimiter="$"><![CDATA[                var learningPipeline = reader.MakeNewEstimator()
+                    .Append(row => (
+                        Label: row.Area.ToKey(),
+                        Title: row.Title.FeaturizeText(),
+                        Description: row.Description.FeaturizeText()))
+                    .Append(row => (
+                        Label: row.Label,
+                        Features: row.Title.ConcatWith(row.Description).Normalize()))
+                    .Append(row => (
+                        Label: row.Label,
+                        Score: classification.Trainers.Sdca(row.Label, row.Features)))
+                    .Append(row => (
+                        Label: row.Label,
+                        Score: row.Score,
+                        PredictedLabel: row.Score.predictedLabel.ToValue()));]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

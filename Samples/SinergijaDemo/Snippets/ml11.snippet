@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ml11</Title>
+      <Author>
+      </Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ml11</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp" Delimiter="$"><![CDATA[                var predictor = loadedModel.MakePredictionFunction<GitHubIssue, GitHubIssuePrediction>(environment);
+
+                var prediction = predictor.Predict(new GitHubIssue()
+                {
+                    Title = "Title",
+                    Description = "Description"
+                });
+
+                Console.WriteLine("Predicted label is: " + prediction.Area);
+                Console.ReadLine();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
